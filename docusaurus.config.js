@@ -75,6 +75,20 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'plog',
+        routeBasePath: 'plog',
+        path: './plog',              // 新博客文章目录
+        blogTitle: 'Plog',
+        blogDescription: 'Photo logs',
+        showReadingTime: true,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -94,6 +108,8 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/plog', label: 'Plog', position: 'left'},
+
           {
             href: 'https://github.com/JerryLinyx',
             label: 'GitHub',
