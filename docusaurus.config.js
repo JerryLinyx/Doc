@@ -79,7 +79,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'http://github.com/JerryLinyx.png',
       navbar: {
         title: 'JerryLinyx',
         logo: {
@@ -95,7 +95,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/JerryLinyx',
             label: 'GitHub',
             position: 'right',
           },
