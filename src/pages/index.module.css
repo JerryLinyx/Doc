@@ -1,0 +1,225 @@
+.resumePage {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  padding: 3rem 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  background: var(--ifm-background-color);
+}
+
+.pageContainer {
+  width: 100%;
+  max-width: 900px;
+}
+
+.introSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.introText {
+  flex: 1 1 360px;
+  text-align: left;
+}
+
+.heroName {
+  padding-top: 20px;
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.heroContact {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.heroSummary {
+  margin: 0 auto 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.heroLinks {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.heroContact a,
+.heroLinks a,
+.heroSummary a,
+.metaLeft a,
+.cardTitle,
+.courseList a,
+.sourceNote a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+.heroContact a:hover,
+.heroContact a:focus,
+.heroLinks a:hover,
+.heroLinks a:focus,
+.heroSummary a:hover,
+.heroSummary a:focus,
+.metaLeft a:hover,
+.metaLeft a:focus,
+.cardTitle:hover,
+.cardTitle:focus,
+.courseList a:hover,
+.courseList a:focus,
+.sourceNote a:hover,
+.sourceNote a:focus {
+  color: #f09228;
+}
+
+.divider {
+  margin: 0 0.4rem;
+}
+
+.introAvatar {
+  flex: 0 0 200px;
+  max-width: 220px;
+}
+
+.avatarImage {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.sectionDescription {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.cardImage {
+  flex: 0 0 200px;
+  max-width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.cardImage img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cardBody {
+  flex: 1;
+}
+
+.cardTitle {
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0.4rem;
+}
+
+.metaLeft {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.metaRight {
+  font-style: italic;
+}
+
+.bulletList {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bulletList li + li {
+  margin-top: 0.4rem;
+}
+
+.coursesGrid {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.courseList {
+  flex: 1 1 200px;
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.sourceNote {
+  margin: 2rem 0 0;
+  font-size: 0.85rem;
+}
+
+.highlight {
+  background-color: #ffffd0;
+  padding: 0 0.15rem;
+}
+
+@media (max-width: 768px) {
+  .introSection {
+    justify-content: center;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .cardImage,
+  .introAvatar {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .cardImage img,
+  .avatarImage {
+    width: 100%;
+  }
+}
