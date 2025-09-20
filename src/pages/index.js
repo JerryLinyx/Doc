@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './index.module.css';
 
 const contactLinks = [
@@ -10,7 +11,7 @@ const contactLinks = [
 
 const researchExperiences = [
   {
-    image: '/index/PET.png',
+    image: 'index/PET.png',
     title: 'Flow-based Deep Generative Model for PET Image Reconstruction - Senior Thesis',
     link: '',
     metaLeft: (
@@ -32,7 +33,7 @@ const researchExperiences = [
     ],
   },
   {
-    image: '/index/officechair.png',
+    image: 'index/officechair.png',
     title: 'Generative AI Based 3D Models Generation',
     link: '',
     metaLeft: (
@@ -52,7 +53,7 @@ const researchExperiences = [
 
 const professionalExperiences = [
   {
-    image: '/index/hikvision.jpeg',
+    image: 'index/hikvision.jpeg',
     title: 'Software Development Intern',
     link: '',
     metaLeft: 'IoT Product Group 5, Ezviz',
@@ -63,7 +64,7 @@ const professionalExperiences = [
     ],
   },
   {
-    image: '/index/zjui.png',
+    image: 'index/zjui.png',
     title: 'Teaching Assistant - Math213 Discrete Mathematics',
     link: 'https://cs.illinois.edu/academics/courses/math213',
     metaLeft: (
@@ -82,7 +83,7 @@ const professionalExperiences = [
 
 const projects = [
   {
-    image: '/index/Lenet.png',
+    image: 'index/Lenet.png',
     title: 'GPU Convolution Kernel Optimizations',
     link: 'https://github.com/JerryLinyx/LeNet-CUDA-ECE408/tree/main/Project',
     metaLeft: (
@@ -99,7 +100,7 @@ const projects = [
     ],
   },
   {
-    image: '/index/fish.png',
+    image: 'index/fish.png',
     title: 'LOS - A Light Linux-Like Operating System',
     link: 'https://github.com/JerryLinyx/Linux-OS-Kernel-ECE391/tree/main/mp3',
     metaLeft: (
@@ -117,7 +118,7 @@ const projects = [
     ],
   },
   {
-    image: '/index/fourlevels.png',
+    image: 'index/fourlevels.png',
     title: 'Infinity Revelation: Demo of an Adventure Puzzle-Solving Game',
     link: 'https://github.com/JerryLinyx/CS415',
     metaLeft: (
@@ -151,6 +152,36 @@ const courseColumns = [
   ],
 ];
 
+function ExperienceCard({item}) {
+  const imageUrl = useBaseUrl(item.image);
+
+  return (
+    <article className={styles.card}>
+      <div className={styles.cardImage}>
+        <img src={imageUrl} alt={item.title} loading="lazy" />
+      </div>
+      <div className={styles.cardBody}>
+        {item.link ? (
+          <a href={item.link} className={styles.cardTitle} target="_blank" rel="noopener noreferrer">
+            {item.title}
+          </a>
+        ) : (
+          <span className={styles.cardTitle}>{item.title}</span>
+        )}
+        <div className={styles.metaRow}>
+          <span className={styles.metaLeft}>{item.metaLeft}</span>
+          <span className={styles.metaRight}>{item.date}</span>
+        </div>
+        <ul className={styles.bulletList}>
+          {item.bullets.map((bullet, bulletIndex) => (
+            <li key={`${item.title}-bullet-${bulletIndex}`}>{bullet}</li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+}
+
 function ExperienceSection({title, description, items}) {
   return (
     <section className={styles.section}>
@@ -159,30 +190,8 @@ function ExperienceSection({title, description, items}) {
         {description && <p className={styles.sectionDescription}>{description}</p>}
       </header>
       <div className={styles.cardList}>
-        {items.map((item, index) => (
-          <article key={`${item.title}-${index}`} className={styles.card}>
-            <div className={styles.cardImage}>
-              <img src={item.image} alt={item.title} loading="lazy" />
-            </div>
-            <div className={styles.cardBody}>
-              {item.link ? (
-                <a href={item.link} className={styles.cardTitle} target="_blank" rel="noopener noreferrer">
-                  {item.title}
-                </a>
-              ) : (
-                <span className={styles.cardTitle}>{item.title}</span>
-              )}
-              <div className={styles.metaRow}>
-                <span className={styles.metaLeft}>{item.metaLeft}</span>
-                <span className={styles.metaRight}>{item.date}</span>
-              </div>
-              <ul className={styles.bulletList}>
-                {item.bullets.map((bullet, bulletIndex) => (
-                  <li key={`${item.title}-bullet-${bulletIndex}`}>{bullet}</li>
-                ))}
-              </ul>
-            </div>
-          </article>
+        {items.map(item => (
+          <ExperienceCard key={item.title} item={item} />
         ))}
       </div>
     </section>
@@ -190,6 +199,8 @@ function ExperienceSection({title, description, items}) {
 }
 
 export default function Home() {
+  const avatarImage = useBaseUrl('index/self3.jpg');
+
   return (
     <Layout title="Yuxuan Lin" description="Personal site for Yuxuan Lin">
       <main className={styles.resumePage}>
@@ -222,8 +233,8 @@ export default function Home() {
               </p>
             </div>
             <div className={styles.introAvatar}>
-              <a href="/index/self3.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="/index/self3.jpg" alt="Yuxuan Lin" className={styles.avatarImage} />
+              <a href={avatarImage} target="_blank" rel="noopener noreferrer">
+                <img src={avatarImage} alt="Yuxuan Lin" className={styles.avatarImage} />
               </a>
             </div>
           </section>
