@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_web=self.webpackChunkmy_web||[]).push([[2953],{6980:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/Doc/plog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Photo logs","blogTitle":"Plog"}}')}}]);
