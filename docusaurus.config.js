@@ -136,6 +136,10 @@ const config = {
                 label: 'Blog',
                 to: '/blog',
               },
+              {
+                label: 'Plog',
+                to: '/plog',
+              },
             ],
           },
           {
@@ -144,6 +148,11 @@ const config = {
               {
                 href: 'https://github.com/JerryLinyx',
                 label: 'GitHub',
+                position: 'right',
+              },
+              {
+                href: 'https://www.youtube.com/@JerryLinyx',
+                label: 'YouTube',
                 position: 'right',
               },
             ],
