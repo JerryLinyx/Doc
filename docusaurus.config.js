@@ -5,6 +5,8 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -13,6 +15,12 @@ const config = {
   title: 'JerryLinyx',
   tagline: 'Welcome',
   favicon: 'img/favicon.ico',
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+      crossorigin: 'anonymous',
+    },
+  ],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -24,6 +32,8 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/Doc/',
+
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -67,6 +77,8 @@ const config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -85,6 +97,8 @@ const config = {
         blogTitle: 'Plog',
         blogDescription: 'Photo logs',
         showReadingTime: true,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
   ],
