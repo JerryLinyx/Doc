@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Go'
-sidebar_position: 1
+sidebar_position: 10
 ---
 # Go
 
@@ -11,6 +11,9 @@ sidebar_position: 1
 
 
 ## Go Project
+
+
+- [Golang全栈编程实况](https://space.bilibili.com/10/lists)
 - [7 天用 Go 从零实现 Web 框架 Gee 教程 | 极客兔兔](https://geektutu.com/post/gee.html)
 - [avelino/awesome-go](https://github.com/avelino/awesome-go)
 - [uhub/awesome-go](https://github.com/uhub/awesome-go)

@@ -9,7 +9,6 @@ tags:
 category: SDE
 format: md
 ---
-<!-- 
 # Animation
 
 ## Geometric Transformations
@@ -20,6 +19,7 @@ Simple transformations can be accomplished by multiplying a matrix times the ver
 - Rotation
 - Scale
 - Translation
+
 $$
 \begin{bmatrix}
 d & e & f & a \\
@@ -41,6 +41,7 @@ $$
 
 ### 3-D Affine Transformations
 General Form (with homogeneous coordinates)
+
 $$
 \begin{bmatrix}
 d & e & f & a \\
@@ -65,6 +66,7 @@ $$
 
 
 ### Translation
+
 $$
 \mathbf{T}(\mathbf{t}) = \mathbf{T}(t_x, t_y, t_z) =
 \begin{bmatrix}
@@ -82,14 +84,16 @@ The inverse of a translation matrix is $T^{−1}(t) = T(−t)$, that is, the vec
 ![](./CS415/w10.11.png)
 
 ### 2-D Rotations: It’s Not Magic
-![](./CS415/w10.12.png)Real-Time Rendering, Fourth Edition (Page 60).
+![](./CS415/w10.12.png)
+
+Real-Time Rendering, Fourth Edition (Page 60).
 
 ### 3-D Rotations
 About x-axis
 - rotates y to z
 
 $$
-\mathbf{R}_x(\phi) = 
+\mathbf{R}_x(\phi) =
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & \cos \phi & -\sin \phi & 0 \\
@@ -102,7 +106,7 @@ About y-axis
 - rotates z to x
 
 $$
-\mathbf{R}_y(\phi) = 
+\mathbf{R}_y(\phi) =
 \begin{bmatrix}
 \cos \phi & 0 & \sin \phi & 0 \\
 0 & 1 & 0 & 0 \\
@@ -115,7 +119,7 @@ About z-axis
 - rotates x to y
 
 $$
-\mathbf{R}_z(\phi) = 
+\mathbf{R}_z(\phi) =
 \begin{bmatrix}
 \cos \phi & -\sin \phi & 0 & 0 \\
 \sin \phi & \cos \phi & 0 & 0 \\
@@ -127,16 +131,18 @@ $$
 Rotations do not commute!
 - Rotation is around the origin
 - To rotate around a point p we have to: translate p to origin, rotate, translate back to p
-- Example:![](./CS415/w10.14.png)
+- Example:
+
+    ![](./CS415/w10.14.png)
 
 ### Concatenating Transformations
-You can execute a sequence of transformations using a single matrix 
+You can execute a sequence of transformations using a single matrix
 $$M_{n} M_{n-1} ... M_2 M_1 p = Mp$$
 
 Just compute the product of the transformation matrices
 Important $M_1$ is applied first then $M_2$ and so on
-- **Modeling transformation**: model is sized, placed and oriented in the virtual world 
-$$ C = TRS $$ 
+- **Modeling transformation**: model is sized, placed and oriented in the virtual world
+$$ C = TRS $$
 $$ TRSp = T(R(Sp)) $$
 
 ### Non-Commutativity Example
@@ -160,14 +166,14 @@ Product of matrices from the chest to shoulder to elbow to wrist, etc.
 
 ## Orientation: Euler Angles
 ### Instancing
-Vegetation instancing. 
+Vegetation instancing.
 All objects the same color in the lower image are rendered in a single draw call.
 You render the same number of triangles as non-instancing…
 So why is instancing more performant than using more meshes?
 
 ### Animation and Orientation
 Interpolation is used to generate in-between frames from keyframes
-At a minimum this means interpolating position and orientation of a model 
+At a minimum this means interpolating position and orientation of a model
 So…how can we represent orientation?
 
 ### Orientation
@@ -179,24 +185,24 @@ Consider a 2D example
 - Starting rotation is 90 degree clockwise
 - Ending rotation is 90 degree counter-clockwise
 - Doing element-by-element linear interpolation to get intermediate rotation
-$$
-\frac{1}{2}
-\begin{bmatrix}
-0 & 1 \\
--1 & 0
-\end{bmatrix}
-+
-\frac{1}{2}
-\begin{bmatrix}
-0 & -1 \\
-1 & 0
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 0 \\
-0 & 0
-\end{bmatrix}
-$$
+    $$
+    \frac{1}{2}
+    \begin{bmatrix}
+    0 & 1 \\
+    -1 & 0
+    \end{bmatrix}
+    +
+    \frac{1}{2}
+    \begin{bmatrix}
+    0 & -1 \\
+    1 & 0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    0 & 0 \\
+    0 & 0
+    \end{bmatrix}
+    $$
 
 - Does this make sense? Should we have expected something different?
 
@@ -204,9 +210,11 @@ $$
 We can record an orientation as
 - Three rotations
 - Each rotation is around a principal axis
-- Example: $$
-\mathbf{E}(h, p, r) = \mathbf{R}_z(r) \mathbf{R}_x(p) \mathbf{R}_y(h)
-$$
+- Example:
+
+    $$
+    \mathbf{E}(h, p, r) = \mathbf{R}_z(r) \mathbf{R}_x(p) \mathbf{R}_y(h)
+    $$
 
 - This not only option
     - 24 different possible orders one could use
@@ -220,7 +228,7 @@ $$
 - Three Euler angles can be used to specify arbitrary object orientation
     - i.e. any orientation we want can be achieved with these 3 rotations
 - Euler angles are used in a lot of applications…they are believed to be intuitive
-- They are compact…requiring only 3 numbers 
+- They are compact…requiring only 3 numbers
 - Easily converted into a single rotation matrix
 
 **The Problematic Parts:**
@@ -281,7 +289,7 @@ $$q = q_0 + iq_1 + jq_2 + kq_3$$
 ### Unit Quaternions
 For convenience, we will use only unit length quaternions
 $$|q| = \sqrt{q_0^2 + q_1^2 + q_2^2 + q_3^2} = 1$$
-- These correspond to the set of 4D vectors 
+- These correspond to the set of 4D vectors
 - They form the ‘surface’ of a 4D hypersphere of radius 1
 
 ### Quaternions as Rotations
@@ -303,6 +311,7 @@ If $\pmb{a}$ is unit length, then $\pmb{q}$ will be also
 
 ### Quaternion to Matrix
 To convert a quaternion to a rotation matrix:
+
 $$
 \begin{bmatrix}
 1 - 2q_2^2 - 2q_3^2 & 2q_1q_2 + 2q_0q_3 & 2q_1q_3 - 2q_0q_2 \\
@@ -322,21 +331,21 @@ Matrix to quaternion is not hard
 `tr(M)` is the trace
 - sum of the diagonal elements
 
-\[
+$$
 q_0 = \frac{1}{2} \sqrt{tr(M)}
-\]
+$$
 
-\[
+$$
 q_1 = \frac{m_{21} - m_{12}}{4q_0}
-\]
+$$
 
-\[
+$$
 q_2 = \frac{m_{02} - m_{20}}{4q_0}
-\]
+$$
 
-\[
+$$
 q_3 = \frac{m_{10} - m_{01}}{4q_0}
-\]
+$$
 
 > This assumes $ M $ is a 4x4 homogeneous rotation matrix...so the diagonal ends with a 1
 
@@ -364,7 +373,7 @@ $\mathbf{qq'}$ represents $\mathbf{q}$ rotated by $\mathbf{q'}$
 This follows very similar rules as matrix multiplication (i.e., non-commutative)
 
 $$
-\mathbf{qq'} = (q_0 + iq_1 + jq_2 + kq_3)(q_0' + iq_1' + jq_2' + kq_3') 
+\mathbf{qq'} = (q_0 + iq_1 + jq_2 + kq_3)(q_0' + iq_1' + jq_2' + kq_3')
 $$
 $$
 = \langle ss' - \mathbf{v} \times \mathbf{v}', s\mathbf{v}' + s'\mathbf{v} + \mathbf{v} \times \mathbf{v}' \rangle
@@ -446,7 +455,7 @@ $$
 This approach allows for a smooth transition between quaternions, minimizing abrupt changes in orientation.
 
 ### Interpolating Quaternions: The Hack
-Interpolating quaternions should be done on the surface of a 3D unit sphere embedded in 4D space. 
+Interpolating quaternions should be done on the surface of a 3D unit sphere embedded in 4D space.
 However, much simpler interpolation along a 4D straight line (open circles) followed by reprojection of the results onto the sphere (black circles) is often sufficient.
 ![](./CS415/w10.9.png)
 
@@ -481,8 +490,8 @@ In UE look at Project Settings > Engine > Physics
 ## Collision Detection
 
 ### Bounding Volumes
-AABB=Axis Aligned Bounding Box 
-OOBB = Object-Oriented Bounding Box 
+AABB=Axis Aligned Bounding Box
+OOBB = Object-Oriented Bounding Box
 BVH = Bounding Volume Hierarchy
 
 ### BVH Construction
@@ -518,17 +527,17 @@ Theoretically, reflections, refractions, and shadows are all examples of global 
 
 ### Lumen
 Lumen is Unreal Engine 5's fully dynamic global illumination and reflections system
-- Enabled out of the box. 
+- Enabled out of the box.
 - Designed for next-generation consoles
 - Supports high-end visualizations like architectural visualization
->“Lumen uses multiple ray-tracing methods to solve Global Illumination and Reflections. 
+>“Lumen uses multiple ray-tracing methods to solve Global Illumination and Reflections.
 Screen Traces are done first, followed by a more reliable method. Lumen uses Software Ray Tracing through Signed Distance Fields by default, but can achieve higher quality on supporting video cards when Hardware Ray Tracing is enabled.”
 
 
 # Game AI
 ## Tactical Waypoints
 ### Tactical and Strategic AI
-Previously discuss pathfinding and decision making 
+Previously discuss pathfinding and decision making
 - A*
 - Decision trees
 
@@ -565,14 +574,14 @@ Tactical and strategic AI try to overcome these limitations
         - Rockstar
         - Ubisoft
 
-## Principles of Design: 
+## Principles of Design:
 ### Starting Points
 Design is an exercise in constraints
 - Technical
 - Narrative/World
 - Time/Resources/Scope
 
-Player Choice as a key constraint 
+Player Choice as a key constraint
 - Some games offer little choice (the designer experience)
 - Others are more-wide open
 
@@ -584,10 +593,10 @@ Make sure you understand the project requirements
 All apps/games start with an IDEA
 There is so much more to what you want to build
 The primary role of a designer is to clearly communicate how that IDEA fits into an App/Game (the bigger picture, the Vision)
-What happens without that clarity? 
+What happens without that clarity?
 - Confusion
 - Delay
-- People building to their own vs. the required standards 
+- People building to their own vs. the required standards
 
 The question is: what focuses the design, what drives the definition of the Vision?
 
@@ -606,14 +615,17 @@ Once you have an idea, set a genre and then build a world around it
     - Skill develops over time, the world encourages retention
     - Interactivity can add another layer
 
-Player Types: These define the core interests of the user we are targeting with our features.
-Example: Minecraft
-- The Collector: 
-    - This user requires the opportunity to gather items and build a large stockpile of items. 
-    - The Builder:This user type enjoys creating different imaginative items from the resources available.
+Player Types define the core interests of the user we are targeting with our features.
 
-Define your User Experience(s): 
-- The different emotional responses we are trying to elicit with our app/game features 
+Example: Minecraft
+
+- The Collector:
+    - This user requires the opportunity to gather items and build a large stockpile of items.
+- The Builder:
+    - This user type enjoys creating different imaginative items from the resources available.
+
+Define your User Experience(s):
+- The different emotional responses we are trying to elicit with our app/game features
 - Example: We want the gamer to be in awe when they face the challenges of our world.
 
 ## MDA
@@ -625,7 +637,7 @@ Aesthetics: The desirable emotional responses evoked by the game dynamics.
 1. Sensation: Game as sense-pleasure
 Games that evoke emotion in the player through sound, visuals, controller rumble or physical effort.
 2. Fantasy: Game as make-believe
-Game as a mean to take the player to another world, some call it escapism. 
+Game as a mean to take the player to another world, some call it escapism.
 3. Narrative: Game as drama
 Game as a mean to tell a story or narrative to the player.
 4. Challenge: Game as obstacle course
@@ -637,11 +649,7 @@ Games in which the player explores the world he/she finds himself/herself in.
 7. Expression: Game as self-discovery
 Games that allow for self-expression from the player through gameplay.
 8. Masochism: Game as submission
-Games that have "farming" or "grinding" as a core element5. Fellowship: Game as social framework
+Games that have "farming" or "grinding" as a core element.
 
-
-
-
-
-# Reference:
-[https://illinois-cs415.github.io](https://illinois-cs415.github.io) -->
+# Reference
+[https://illinois-cs415.github.io](https://illinois-cs415.github.io)
