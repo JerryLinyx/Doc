@@ -4,27 +4,12 @@
         <title>JerryLinyx Blog</title>
         <link>https://JerryLinyx.github.io/Doc/blog/</link>
         <description>JerryLinyx Blog</description>
-        <lastBuildDate>Thu, 02 May 2024 01:45:56 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Apr 2024 20:18:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Artificial Intelligence UIUC CS 440]]></title>
-            <link>https://JerryLinyx.github.io/Doc/blog/2024/05/02/cs440/</link>
-            <guid>https://JerryLinyx.github.io/Doc/blog/2024/05/02/cs440/</guid>
-            <pubDate>Thu, 02 May 2024 01:45:56 GMT</pubDate>
-            <description><![CDATA[<!--]]></description>
-            <category>AI</category>
-            <category>RL</category>
-            <category>DL</category>
-            <category>ML</category>
-            <category>CV</category>
-            <category>NLP</category>
-            <category>LLM</category>
-            <category>MLE</category>
-        </item>
-        <item>
-            <title><![CDATA[Game Development UIUC CS 415]]></title>
+            <title><![CDATA[Game Development | 游戏开发 | CS 415 UIUC]]></title>
             <link>https://JerryLinyx.github.io/Doc/blog/2024/04/29/cs415/</link>
             <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/29/cs415/</guid>
             <pubDate>Mon, 29 Apr 2024 20:18:20 GMT</pubDate>
@@ -755,75 +740,15 @@ Games that have "farming" or "grinding" as a core element.</li>
             <category>SDE</category>
         </item>
         <item>
-            <title><![CDATA[Computer Systems Engineering UIUC ECE 391]]></title>
-            <link>https://JerryLinyx.github.io/Doc/blog/2024/04/23/391os/</link>
-            <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/23/391os/</guid>
-            <pubDate>Tue, 23 Apr 2024 16:17:49 GMT</pubDate>
-            <description><![CDATA[Link to Github Repository]]></description>
-            <content:encoded><![CDATA[<p><a href="https://github.com/L10yx/ECE391/tree/main/mp3" target="_blank" rel="noopener noreferrer"><strong>Link to Github Repository</strong></a></p>
-<h1>C语言基础</h1>
-<table><thead><tr><th></th><th>2's complement</th><th>unsigned</th></tr></thead><tbody><tr><td><strong>8 bits</strong></td><td>char</td><td>unsigned char</td></tr><tr><td><strong>16 bits</strong></td><td>short int</td><td>unsigned short int</td></tr><tr><td><strong>32 bits</strong></td><td>int</td><td>unsigned int</td></tr><tr><td><strong>32 or 64 bits</strong></td><td>long</td><td>unsigned long</td></tr><tr><td><strong>64 bits</strong></td><td>long long int</td><td>unsigned long long int</td></tr></tbody></table>]]></content:encoded>
-            <category>OS</category>
-            <category>SDE</category>
-        </item>
-        <item>
-            <title><![CDATA[Database Systems UIUC CS 411]]></title>
-            <link>https://JerryLinyx.github.io/Doc/blog/2024/04/22/411db/</link>
-            <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/22/411db/</guid>
-            <pubDate>Mon, 22 Apr 2024 18:33:26 GMT</pubDate>
-            <description><![CDATA[<!--]]></description>
-            <content:encoded><![CDATA[<p>--&gt;</p>]]></content:encoded>
-            <category>Databases</category>
-            <category>MySQL</category>
-            <category>Redis</category>
-            <category>SDE</category>
-        </item>
-        <item>
-            <title><![CDATA[CS技术栈汇总+项目]]></title>
-            <link>https://JerryLinyx.github.io/Doc/blog/2024/04/21/cs-skillsets/</link>
-            <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/21/cs-skillsets/</guid>
-            <pubDate>Sun, 21 Apr 2024 20:13:36 GMT</pubDate>
-            <description><![CDATA[<!--]]></description>
-            <category>SDE</category>
-        </item>
-        <item>
-            <title><![CDATA[Markdown手册]]></title>
-            <link>https://JerryLinyx.github.io/Doc/blog/2024/04/21/markdown/</link>
-            <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/21/markdown/</guid>
-            <pubDate>Sun, 21 Apr 2024 18:27:41 GMT</pubDate>
-            <description><![CDATA[<!--]]></description>
-            <content:encoded><![CDATA[<p>--&gt;</p>]]></content:encoded>
-            <category>Markdown</category>
-        </item>
-        <item>
-            <title><![CDATA[LLM进阶之路]]></title>
-            <link>https://JerryLinyx.github.io/Doc/blog/2024/04/21/llm/</link>
-            <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/21/llm/</guid>
-            <pubDate>Sun, 21 Apr 2024 18:10:45 GMT</pubDate>
-            <description><![CDATA[<!--]]></description>
-            <content:encoded><![CDATA[<p>--&gt;</p>]]></content:encoded>
-            <category>AI</category>
-            <category>LLM</category>
-            <category>MLE</category>
-        </item>
-        <item>
-            <title><![CDATA[Leetcode Tutorial <数据结构>]]></title>
-            <link>https://JerryLinyx.github.io/Doc/blog/2024/04/21/leetcode/</link>
-            <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/21/leetcode/</guid>
-            <pubDate>Sun, 21 Apr 2024 17:23:29 GMT</pubDate>
-            <description><![CDATA[<!--]]></description>
-            <category>Data Structure</category>
-        </item>
-        <item>
-            <title><![CDATA[三天速成TOEFL<托福模版>]]></title>
+            <title><![CDATA[TOEFL Template | 托福模版]]></title>
             <link>https://JerryLinyx.github.io/Doc/blog/2024/04/18/toefl/</link>
             <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/18/toefl/</guid>
             <pubDate>Thu, 18 Apr 2024 20:29:13 GMT</pubDate>
             <description><![CDATA[Integrated Writing]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="integrated-writing">Integrated Writing<a href="https://jerrylinyx.github.io/Doc/blog/2024/04/18/toefl/#integrated-writing" class="hash-link" aria-label="Direct link to Integrated Writing" title="Direct link to Integrated Writing">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="template1">Template1<a href="https://jerrylinyx.github.io/Doc/blog/2024/04/18/toefl/#template1" class="hash-link" aria-label="Direct link to Template1" title="Direct link to Template1">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Untitled" src="https://jerrylinyx.github.io/Doc/assets/images/Untitled-8e3a1124c1a9462bd78dd56b84f61c02.png" width="2000" height="2386" class="img_ev3q">
-The reading and the lecture are about …The author in the reading material cites three reasons to support the viewpoint that … In the listening material, nevertheless, the lecturer argues that … and opposes all those theories in the reading material.</p>
+<p><img decoding="async" loading="lazy" alt="Untitled" src="https://jerrylinyx.github.io/Doc/assets/images/Untitled-8e3a1124c1a9462bd78dd56b84f61c02.png" width="2000" height="2386" class="img_ev3q"></p>
+<p>The reading and the lecture are about …The author in the reading material cites three reasons to support the viewpoint that … In the listening material, nevertheless, the lecturer argues that … and opposes all those theories in the reading material.</p>
 <p>First, the author suggests that … However, the lecturer offers an opposite stand that…</p>
 <p>In addition, in contrast to the author’s another reason that … the lecturer contends that…</p>
 <p>Finally, the lecturer cast doubt on the last reason in the reading that … since … he also demonstrates that …</p>
@@ -1628,7 +1553,7 @@ In my view, I consider shopping only when I have a specific purchase to make wou
             <category>EN</category>
         </item>
         <item>
-            <title><![CDATA[三天速成Duolingo <多邻国模版>]]></title>
+            <title><![CDATA[Duolingo Template | 多邻国模版]]></title>
             <link>https://JerryLinyx.github.io/Doc/blog/2024/04/18/duolingo/</link>
             <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/18/duolingo/</guid>
             <pubDate>Thu, 18 Apr 2024 20:29:01 GMT</pubDate>
@@ -1768,7 +1693,7 @@ telescope 望远镜</p>
             <category>EN</category>
         </item>
         <item>
-            <title><![CDATA[快速搭建个人博客 <MacOS环境下通过Github部署Hexo>]]></title>
+            <title><![CDATA[快速搭建个人博客：Github部署Hexo (MacOS)]]></title>
             <link>https://JerryLinyx.github.io/Doc/blog/2024/04/18/macos-hexo-github/</link>
             <guid>https://JerryLinyx.github.io/Doc/blog/2024/04/18/macos-hexo-github/</guid>
             <pubDate>Thu, 18 Apr 2024 17:24:51 GMT</pubDate>

@@ -2,32 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://JerryLinyx.github.io/Doc/blog/</id>
     <title>JerryLinyx Blog</title>
-    <updated>2024-05-02T01:45:56.000Z</updated>
+    <updated>2024-04-29T20:18:20.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://JerryLinyx.github.io/Doc/blog/"/>
     <subtitle>JerryLinyx Blog</subtitle>
     <icon>https://JerryLinyx.github.io/Doc/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Artificial Intelligence UIUC CS 440]]></title>
-        <id>https://JerryLinyx.github.io/Doc/blog/2024/05/02/cs440/</id>
-        <link href="https://JerryLinyx.github.io/Doc/blog/2024/05/02/cs440/"/>
-        <updated>2024-05-02T01:45:56.000Z</updated>
-        <summary type="html"><![CDATA[<!--]]></summary>
-        <author>
-            <name>Yuxuan (Jerry) Lin</name>
-            <uri>https://www.linkedin.com/in/yuxuan0/</uri>
-        </author>
-        <category label="AI" term="AI"/>
-        <category label="RL" term="RL"/>
-        <category label="DL" term="DL"/>
-        <category label="ML" term="ML"/>
-        <category label="CV" term="CV"/>
-        <category label="NLP" term="NLP"/>
-        <category label="LLM" term="LLM"/>
-        <category label="MLE" term="MLE"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Game Development UIUC CS 415]]></title>
+        <title type="html"><![CDATA[Game Development | 游戏开发 | CS 415 UIUC]]></title>
         <id>https://JerryLinyx.github.io/Doc/blog/2024/04/29/cs415/</id>
         <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/29/cs415/"/>
         <updated>2024-04-29T20:18:20.000Z</updated>
@@ -762,99 +743,15 @@ Games that have "farming" or "grinding" as a core element.</li>
         <category label="SDE" term="SDE"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Computer Systems Engineering UIUC ECE 391]]></title>
-        <id>https://JerryLinyx.github.io/Doc/blog/2024/04/23/391os/</id>
-        <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/23/391os/"/>
-        <updated>2024-04-23T16:17:49.000Z</updated>
-        <summary type="html"><![CDATA[Link to Github Repository]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://github.com/L10yx/ECE391/tree/main/mp3" target="_blank" rel="noopener noreferrer"><strong>Link to Github Repository</strong></a></p>
-<h1>C语言基础</h1>
-<table><thead><tr><th></th><th>2's complement</th><th>unsigned</th></tr></thead><tbody><tr><td><strong>8 bits</strong></td><td>char</td><td>unsigned char</td></tr><tr><td><strong>16 bits</strong></td><td>short int</td><td>unsigned short int</td></tr><tr><td><strong>32 bits</strong></td><td>int</td><td>unsigned int</td></tr><tr><td><strong>32 or 64 bits</strong></td><td>long</td><td>unsigned long</td></tr><tr><td><strong>64 bits</strong></td><td>long long int</td><td>unsigned long long int</td></tr></tbody></table>]]></content>
-        <author>
-            <name>Yuxuan (Jerry) Lin</name>
-            <uri>https://www.linkedin.com/in/yuxuan0/</uri>
-        </author>
-        <category label="OS" term="OS"/>
-        <category label="SDE" term="SDE"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Database Systems UIUC CS 411]]></title>
-        <id>https://JerryLinyx.github.io/Doc/blog/2024/04/22/411db/</id>
-        <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/22/411db/"/>
-        <updated>2024-04-22T18:33:26.000Z</updated>
-        <summary type="html"><![CDATA[<!--]]></summary>
-        <content type="html"><![CDATA[<p>--&gt;</p>]]></content>
-        <author>
-            <name>Yuxuan (Jerry) Lin</name>
-            <uri>https://www.linkedin.com/in/yuxuan0/</uri>
-        </author>
-        <category label="Databases" term="Databases"/>
-        <category label="MySQL" term="MySQL"/>
-        <category label="Redis" term="Redis"/>
-        <category label="SDE" term="SDE"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CS技术栈汇总+项目]]></title>
-        <id>https://JerryLinyx.github.io/Doc/blog/2024/04/21/cs-skillsets/</id>
-        <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/21/cs-skillsets/"/>
-        <updated>2024-04-21T20:13:36.000Z</updated>
-        <summary type="html"><![CDATA[<!--]]></summary>
-        <author>
-            <name>Yuxuan (Jerry) Lin</name>
-            <uri>https://www.linkedin.com/in/yuxuan0/</uri>
-        </author>
-        <category label="SDE" term="SDE"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Markdown手册]]></title>
-        <id>https://JerryLinyx.github.io/Doc/blog/2024/04/21/markdown/</id>
-        <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/21/markdown/"/>
-        <updated>2024-04-21T18:27:41.000Z</updated>
-        <summary type="html"><![CDATA[<!--]]></summary>
-        <content type="html"><![CDATA[<p>--&gt;</p>]]></content>
-        <author>
-            <name>Yuxuan (Jerry) Lin</name>
-            <uri>https://www.linkedin.com/in/yuxuan0/</uri>
-        </author>
-        <category label="Markdown" term="Markdown"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[LLM进阶之路]]></title>
-        <id>https://JerryLinyx.github.io/Doc/blog/2024/04/21/llm/</id>
-        <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/21/llm/"/>
-        <updated>2024-04-21T18:10:45.000Z</updated>
-        <summary type="html"><![CDATA[<!--]]></summary>
-        <content type="html"><![CDATA[<p>--&gt;</p>]]></content>
-        <author>
-            <name>Yuxuan (Jerry) Lin</name>
-            <uri>https://www.linkedin.com/in/yuxuan0/</uri>
-        </author>
-        <category label="AI" term="AI"/>
-        <category label="LLM" term="LLM"/>
-        <category label="MLE" term="MLE"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Leetcode Tutorial <数据结构>]]></title>
-        <id>https://JerryLinyx.github.io/Doc/blog/2024/04/21/leetcode/</id>
-        <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/21/leetcode/"/>
-        <updated>2024-04-21T17:23:29.000Z</updated>
-        <summary type="html"><![CDATA[<!--]]></summary>
-        <author>
-            <name>Yuxuan (Jerry) Lin</name>
-            <uri>https://www.linkedin.com/in/yuxuan0/</uri>
-        </author>
-        <category label="Data Structure" term="Data Structure"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[三天速成TOEFL<托福模版>]]></title>
+        <title type="html"><![CDATA[TOEFL Template | 托福模版]]></title>
         <id>https://JerryLinyx.github.io/Doc/blog/2024/04/18/toefl/</id>
         <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/18/toefl/"/>
         <updated>2024-04-18T20:29:13.000Z</updated>
         <summary type="html"><![CDATA[Integrated Writing]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="integrated-writing">Integrated Writing<a href="https://jerrylinyx.github.io/Doc/blog/2024/04/18/toefl/#integrated-writing" class="hash-link" aria-label="Direct link to Integrated Writing" title="Direct link to Integrated Writing">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="template1">Template1<a href="https://jerrylinyx.github.io/Doc/blog/2024/04/18/toefl/#template1" class="hash-link" aria-label="Direct link to Template1" title="Direct link to Template1">​</a></h3>
-<p><img decoding="async" loading="lazy" alt="Untitled" src="https://jerrylinyx.github.io/Doc/assets/images/Untitled-8e3a1124c1a9462bd78dd56b84f61c02.png" width="2000" height="2386" class="img_ev3q">
-The reading and the lecture are about …The author in the reading material cites three reasons to support the viewpoint that … In the listening material, nevertheless, the lecturer argues that … and opposes all those theories in the reading material.</p>
+<p><img decoding="async" loading="lazy" alt="Untitled" src="https://jerrylinyx.github.io/Doc/assets/images/Untitled-8e3a1124c1a9462bd78dd56b84f61c02.png" width="2000" height="2386" class="img_ev3q"></p>
+<p>The reading and the lecture are about …The author in the reading material cites three reasons to support the viewpoint that … In the listening material, nevertheless, the lecturer argues that … and opposes all those theories in the reading material.</p>
 <p>First, the author suggests that … However, the lecturer offers an opposite stand that…</p>
 <p>In addition, in contrast to the author’s another reason that … the lecturer contends that…</p>
 <p>Finally, the lecturer cast doubt on the last reason in the reading that … since … he also demonstrates that …</p>
@@ -1663,7 +1560,7 @@ In my view, I consider shopping only when I have a specific purchase to make wou
         <category label="EN" term="EN"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[三天速成Duolingo <多邻国模版>]]></title>
+        <title type="html"><![CDATA[Duolingo Template | 多邻国模版]]></title>
         <id>https://JerryLinyx.github.io/Doc/blog/2024/04/18/duolingo/</id>
         <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/18/duolingo/"/>
         <updated>2024-04-18T20:29:01.000Z</updated>
@@ -1807,7 +1704,7 @@ telescope 望远镜</p>
         <category label="EN" term="EN"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[快速搭建个人博客 <MacOS环境下通过Github部署Hexo>]]></title>
+        <title type="html"><![CDATA[快速搭建个人博客：Github部署Hexo (MacOS)]]></title>
         <id>https://JerryLinyx.github.io/Doc/blog/2024/04/18/macos-hexo-github/</id>
         <link href="https://JerryLinyx.github.io/Doc/blog/2024/04/18/macos-hexo-github/"/>
         <updated>2024-04-18T17:24:51.000Z</updated>
