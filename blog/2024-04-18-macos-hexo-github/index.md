@@ -1,5 +1,5 @@
 ---
-title: 快速搭建个人博客 <MacOS环境下通过Github部署Hexo>
+title: 快速搭建个人博客：Github部署Hexo (MacOS)
 date: '2024-04-18T17:24:51'
 authors:
 - jerry

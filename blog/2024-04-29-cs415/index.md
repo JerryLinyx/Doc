@@ -1,5 +1,5 @@
 ---
-title: Game Development UIUC CS 415
+title: Game Development | 游戏开发 | CS 415 UIUC
 date: '2024-04-29T20:18:20'
 authors:
 - jerry
@@ -34,6 +34,8 @@ z \\
 1
 \end{bmatrix}
 $$
+
+<!-- truncate -->
 
 3 dimensional transformations are implemented as a 4x4 matrix
 - We express the 3D position of a point using homogeneous coordinates…add a fourth w coordinate

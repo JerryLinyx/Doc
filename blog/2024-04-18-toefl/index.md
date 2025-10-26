@@ -1,5 +1,5 @@
 ---
-title: 三天速成TOEFL<托福模版>
+title: TOEFL Template | 托福模版
 date: '2024-04-18T20:29:13'
 authors:
 - jerry
@@ -10,10 +10,10 @@ tags:
 # Writing
 ## Integrated Writing
 
-<!-- truncate -->
-
 ### Template1
 ![Untitled](./Untitled.png)
+
+<!-- truncate -->
 The reading and the lecture are about …The author in the reading material cites three reasons to support the viewpoint that … In the listening material, nevertheless, the lecturer argues that … and opposes all those theories in the reading material.
 
 First, the author suggests that … However, the lecturer offers an opposite stand that…
@@ -21,6 +21,8 @@ First, the author suggests that … However, the lecturer offers an opposite sta
 In addition, in contrast to the author’s another reason that … the lecturer contends that…
 
 Finally, the lecturer cast doubt on the last reason in the reading that … since … he also demonstrates that …
+
+
 
 ### Template2
 ![Untitled](./integradewriting2.png)

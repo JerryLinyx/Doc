@@ -1,5 +1,5 @@
 ---
-title: 三天速成Duolingo <多邻国模版>
+title: Duolingo Template | 多邻国模版
 date: '2024-04-18T20:29:01'
 authors:
 - jerry
