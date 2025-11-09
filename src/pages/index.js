@@ -233,9 +233,10 @@ export default function Home() {
               </p>
             </div>
             <div className={styles.introAvatar}>
-              <a href={avatarImage} target="_blank" rel="noopener noreferrer">
+              {/* <a href={avatarImage} target="_blank" rel="noopener noreferrer">
                 <img src={avatarImage} alt="Yuxuan Lin" className={styles.avatarImage} />
-              </a>
+              </a> */}
+              <img src={avatarImage} alt="Yuxuan Lin" className={styles.avatarImage} />
             </div>
           </section>
 

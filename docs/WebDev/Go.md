@@ -1,14 +1,13 @@
 ---
-sidebar_label: 'Go'
-sidebar_position: 10
+sidebar_label: 'Go Resources'
+sidebar_position: 100
 ---
-# Go
+# Go Resources
 
 ## Go Tutorial
 
 - [8 小时转职 Golang 工程师](https://www.yuque.com/aceld/mo95lb)
-
-
+ 
 
 ## Go Project
 
