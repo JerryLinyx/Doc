@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import Layout from '@theme/Layout';
 import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './index.module.css';
+import {useColorMode} from '@docusaurus/theme-common';
 
 const contactLinks = [
   {label: 'LinkedIn', href: 'https://www.linkedin.com/in/yuxuan0/'},
@@ -198,6 +199,30 @@ function ExperienceSection({title, description, items}) {
   );
 }
 
+
+function VisitorMap() {
+  const {colorMode} = useColorMode(); // "light" | "dark"
+
+  const src = colorMode === "dark"
+    ? "https://mapmyvisitors.com/map.png?cl=0e1633&w=800&t=n&d=HgG0G9MPsyNUyxeSL4SQwMmobQkkAosnFPTAs8IgEyI&co=0b4975&ct=cdd4d9"
+    : "https://mapmyvisitors.com/map.png?cl=ffffff&w=800&t=n&d=HgG0G9MPsyNUyxeSL4SQwMmobQkkAosnFPTAs8IgEyI&co=2d78ad&ct=ffffff";
+
+  return (
+    <a href="https://mapmyvisitors.com/web/1c0m6" target="_blank" rel="noopener noreferrer">
+      <img
+        src={src}
+        alt="Visitor Map"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          borderRadius: "12px"
+        }}
+      />
+    </a>
+  );
+}
+
 export default function Home() {
   const avatarImage = useBaseUrl('index/self3.jpg');
 
@@ -219,7 +244,7 @@ export default function Home() {
                 Hi! I am currently pursuing a M.S. in Computer Engineering
                 at <b>Columbia University</b>, expecting to graduate in December 2026. 
                 <br />
-                Prior to this, I earned a B.S. in Computer Engineering from <b>University of Illinois Urbana-Champaign</b> and a B.Eng. in Electronic & Computer Engineering from <b>Zhejiang University</b>.
+                Prior to this, I earned a B.S. in Computer Engineering from <b>University of Illinois Urbana-Champaign</b> and a B.Eng. in Electronic & Computer Engineering from <b>Zhejiang University</b> at the same time.
               </p>
               <p className={styles.heroLinks}>
                 {contactLinks.map((link, index) => (
@@ -280,6 +305,15 @@ export default function Home() {
               ))}
             </div>
           </section>
+
+          
+          <div className={styles.mapContainer}>
+            <VisitorMap />
+          </div>
+
+
+
+
 
           <p className={clsx(styles.sourceNote, 'text--center')}>
           Adapted design and styles from{' '}
