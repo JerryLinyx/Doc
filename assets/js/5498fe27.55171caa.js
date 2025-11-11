@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_web=self.webpackChunkmy_web||[]).push([[1661],{8330:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"WebDev","slug":"/category/webdev","permalink":"/Doc/docs/category/webdev","sidebar":"tutorialSidebar","navigation":{"next":{"title":"PostgreSQL","permalink":"/Doc/docs/WebDev/DB"}}}}')}}]);
