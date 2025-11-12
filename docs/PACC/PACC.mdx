@@ -1,0 +1,319 @@
+---
+sidebar_label: 'PACC'
+sidebar_position: 50
+---
+
+# Power-Aware Collective Communication
+## Contributors
+- **Yuxuan Lin** · yl6061@columbia.edu  
+- **Jiayu Zhou** · jz4019@columbia.edu  
+- **Shufeng Chen** · sc5739@columbia.edu  
+- **Boxiong Li** · bl3155@columbia.edu  
+
+## Abstract
+This artifact supports our work on improving the energy efficiency of distributed LLM training through power-aware communication. It consists of two primary components:
+- A Real-World Trace Collection Framework: A Google Colab notebook that uses Unsloth and the PyTorch Profiler to generate detailed execution and power traces from fine-tuning a Llama 3 model on a single GPU.
+- A Simulation Framework: A set of scripts and configurations for using Symbolic Tensor Graph (STG) to generate synthetic yet realistic MLPerf-like workload traces and running them with the ASTRA-Sim 2.0 analytical backend to simulate distributed training.
+
+The artifacts allow for the reproduction of our foundational workflows: (1) capturing operator-level traces from real hardware and (2) simulating a distributed setup using generated traces. Minimal requirements include a Google account for the Colab portion and Docker for the simulation part.
+
+## Introduction
+### Project Goal
+Large Language Model (LLM) training at scale requires hundreds to thousands of GPUs.  
+**Collective communication** (e.g., AllReduce) dominates both training **performance** and **energy cost**. Our project aims to **reduce communication energy overhead** through **power-aware communication**, focusing on **DVFS (Dynamic Voltage and Frequency Scaling)** during the communication phase — without sacrificing performance.
+
+### Description
+#### How to access
+The artifact is hosted in a GitHub repository. You will need to clone the repository to access the scripts and documentation.
+```bash
+git clone https://github.com/EECS6894/power-aware-communication.git
+cd power-aware-communication
+```
+#### Hardware dependencies
+
+- Real-World Trace Collection Framework: Requires access to an NVIDIA Tesla T4 GPU (15 GB), available via the Google Colab free tier. It should also work on other GPUs with similar or greater memory capacity.
+- Simulation Framework: Requires no specialized hardware. It will run on Docker. The ASTRA-Sim analytical backend does not rely on GPUs.
+
+#### Software dependencies
+- Real-World Trace Collection Framework: All dependencies (PyTorch, Unsloth, etc.) are installed automatically within the Google Colab notebook. No local setup is needed.
+- Simulation Framework: Requires a working Docker installation. All other dependencies (C++ compiler, Python, ASTRA-Sim, STG) are containerized in the provided Dockerfile and will be built into the image.
+
+#### Datasets and Models
+Both the dataset used for fine-tuning and the Llama 3.2 3B base model are downloaded automatically from the HuggingFace Hub when the Colab notebook is executed. No manual downloads are required. No external datasets or models are needed for the simulation workflow.
+
+### Roadmap
+
+| Stage | Task | Contribution|Status |
+|-------|------|--------| -------|
+| [ASTRA-Sim setup](#22-astra-sim-analytical-simulation-and-integration) | Analytical backend |All| ✅ Done  |
+| [Real trace collection](#1-real-training-framework) | PyTorch Profiler + Unsloth (See [Results Sample](#results-sample)) |Yuxuan Lin, Jiayu Zhou | ✅ Done |
+| [Chakra ET generation](#2-simulation-framework)| For ASTRA-Sim input | Shufeng Chen, Boxiong Li | ✅ Done |
+| Power modeling | DVFS-aware communication |All| 🟡 In progress  |
+| ASTRA-Sim Integration | Power-aware backend |All| 🟡 In progress  |
+| Evaluation | EDP + Samples/J | TBD|🔜 Planned |
+
+## 1. Real Training Framework
+
+We use [**Unsloth**](https://github.com/unslothai/unsloth) as the real training backend for efficient LLM profiling and trace collection.
+
+#### Goals
+- Collect **PyTorch Profiler Execution Traces** during actual fine-tuning runs.  
+- Record **compute events**, memory usage, shapes, and execution timelines.  
+- Generate high-resolution traces to support energy/performance co-analysis.  
+- Provide a reproducible **trace-driven workflow** for downstream simulation and optimization.
+
+#### Environment Setup
+- **Host:** [Google Colab](https://colab.research.google.com/) (Free tier)  
+- **GPU:** Tesla T4 (15 GB)  
+- **Framework:** [PyTorch](https://pytorch.org/) + [Unsloth](https://github.com/unslothai/unsloth)  
+- **Installation:** No Conda required; all dependencies installed via notebook.  
+- **Setup time:** ≤ 5 minutes (from notebook open to first run)  
+- **Profiling duration:** ≤ 1 minute per run  
+- **Resource usage:** See the table below (measured on Colab T4)
+
+| Resource    | Used         | Total        |
+|-------------|-------------:|-------------:|
+| System RAM  |  8.3 GB      | 12.7 GB      |
+| GPU RAM     | 10.8 GB      | 15.0 GB      |
+| Disk        | 46.1 GB      | 235.7 GB     |
+
+#### Why Unsloth
+- Memory-efficient fine-tuning, enabling profiling on limited GPU resources.  
+- Native support for PyTorch Profiler integration.  
+- Compatible with multiple LLM architectures (e.g., LLaMA, Mistral, Gemma).  
+- Easy to reproduce in Colab environments.
+
+#### Run Instruction
+Please open and run our [Colab Notebook](./static/RealTraceGenerator_of_Llama3.2_3B_Conversational.ipynb) on a **free Tesla T4 Colab instance**:
+
+1. Navigate to **Runtime → Run all**.  
+2. All dependencies will be installed automatically.  
+3. Generated traces will include both **PyTorch profiler** and **NVML power** logs.
+
+<div>
+  <a href="https://unsloth.ai/">
+    <img
+      src="https://github.com/unslothai/unsloth/raw/main/images/unsloth%20new%20logo.png"
+      alt="Unsloth logo"
+      width="115"
+    />
+  </a>
+  <a> &nbsp;</a>
+  <a href="https://docs.unsloth.ai/">
+    <img
+      src="https://github.com/unslothai/unsloth/blob/main/images/documentation%20green%20button.png?raw=true"
+      alt="Unsloth documentation"
+      width="125"
+    />
+  </a>
+</div>
+
+#### Results Sample
+On Colab, you can check available trace by:
+```bash
+%ls /content/gdrive/MyDrive/llama32_profile/trace
+
+<some-random-number>.pt.trace.json
+power_log.csv
+```
+<!-- **Example outputs**:
+- [some-random-number.pt.trace.json](https://drive.google.com/file/d/13LliOcmkRFrh-EB0DSvBzAP1Fw3UGRa9/view?usp=drive_link) — PyTorch profiler execution trace (Chrome trace format).  
+
+<p align="center">
+  <img src="static/top10ops.png" alt=" Top10 Operations" width="800">
+</p>
+
+`The figure shows top 10 operations by duration.`
+
+- [power_log.csv](static/power_log.csv) — Raw NVML power log with timestamp, power (W), GPU & memory utilization.
+
+<p align="center">
+  <img src="static/GPU%20power.png" alt="GPU Power Trace" width="800">
+</p>
+
+`The figure shows the GPU power consumption curve aligned with the profiler timeline.` -->
+
+### Example Outputs
+
+- [**some-random-number.pt.trace.json**](https://drive.google.com/file/d/13LliOcmkRFrh-EB0DSvBzAP1Fw3UGRa9/view?usp=drive_link) — PyTorch profiler execution trace (Chrome trace format)
+
+![Top 10 Operations](./img/top10ops.png)
+
+<small><em>The figure shows top 10 operations by duration.</em></small>
+
+---
+
+- [**power_log.csv**](./static/power_log.csv) — Raw NVML power log with timestamp, power (W), GPU & memory utilization.
+
+
+![GPU Power Trace](./img/GPU%20power.png)
+
+<small><em>The figure shows the GPU power consumption curve aligned with the profiler timeline.</em></small>
+
+
+## 2. Simulation Framework
+We simulate communication and power behavior with:
+- [**ASTRA-Sim**](https://github.com/astra-sim): communication and system-level simulator  
+- [**Symbolic Tensor Graph**](https://github.com/astra-sim/symbolic_tensor_graph): lightweight ET trace format for scalable simulations
+
+- **Why Simulation**
+    - Real hardware measurements are expensive and slow at scale.
+    - Simulation allows rapid design-space exploration and power modeling.
+
+- **Features we leverage**
+    - Analytical backend support  
+    - Multi-dimensional topology modeling  
+    - Scheduling and overlap policy tuning  
+    - Trace-driven energy/performance estimation
+
+[ASTRA-Sim Docs](https://astra-sim.github.io/)
+### 2.1 Chakra ET Generation and ASTRA-Sim Integration (Shufeng Chen)
+
+This component focuses on integrating **Symbolic Tensor Graph (STG)** with **ASTRA-Sim** to generate workload traces for simulation.
+
+#### Goals
+- Generate **Chakra Execution Trace (ET)** and **communicator** files for LLM workloads (e.g., LLaMA3, BERT).
+- Run ASTRA-Sim analytical simulations using the generated traces.
+- Establish a reproducible workflow for trace-driven performance and energy analysis.
+
+#### Environment Setup
+- **Host:** Windows 11  
+- **Environment:** Ubuntu (via Docker)  
+- **Tools:** [ASTRA-Sim](https://github.com/astra-sim/astra-sim) · [Symbolic Tensor Graph](https://github.com/astra-sim/symbolic_tensor_graph)  
+- **Installation:** Follow both tools’ official setup guides (no Conda required).
+- **Setup time:** ≤ 30 minutes (from environment setup to first successful run)  
+- **Run time per simulation:** ~2–3 minutes  
+- **Resource usage:** RAM ≈ 0.97 GB, Disk ≈ 5.3 GB used in author's run (within Docker container; ensure ≥ 6 GB free space)
+
+#### Installation
+To set up the environment and install the required dependencies, follow these steps:
+```bash
+# Clone the repository from symbolic_tensor_graph
+git clone git@github.com:astra-sim/symbolic_tensor_graph.git
+
+# Navigate to the project directory
+cd symbolic_tensor_graph
+
+# Install dependencies via conda
+conda create -n <env_name>
+conda activate <env_name>
+conda install numpy sympy python-graphviz protobuf pandas -c conda-forge
+```
+
+#### Generating ET Files
+```bash
+python3 main.py \
+  --output_dir generated/llama3_7b_simple \
+  --output_name workload.%d.et \
+  --dp 1 --tp 1 --pp 1 --sp 1 \
+  --model_type llama \
+  --dmodel 4096 --head 32 --kvhead 8 --dff 11008 \
+  --seq 2048 --batch 4 --num_stacks 32 \
+  --mixed_precision True \
+  --chakra_schema_version v0.0.4
+```
+**Parameters Used**
+
+| Parameter | Value | Description |
+|------------|-------|-------------|
+| `--output_dir` | `generated/llama3_7b_simple` | Directory to store output traces. |
+| `--output_name` | `workload.%d.et` | Output filename pattern (`%d` = shard index). |
+| `--dp` / `--tp` / `--pp` / `--sp` | `1` | Data, tensor, pipeline, and sequence parallel degrees (all set to 1 for baseline). |
+| `--model_type` | `llama` | Model family for graph generation. |
+| `--dmodel` | `4096` | Hidden size per transformer layer. |
+| `--head` | `32` | Number of attention heads. |
+| `--kvhead` | `8` | Number of key-value heads (for GQA structure). |
+| `--dff` | `11008` | Feed-forward hidden dimension. |
+| `--seq` | `2048` | Sequence length. |
+| `--batch` | `4` | Global batch size. |
+| `--num_stacks` | `32` | Transformer depth (number of layers). |
+| `--mixed_precision` | `True` | Enables FP16 precision for faster generation and lower memory. |
+| `--chakra_schema_version` | `v0.0.4` | Schema version for Astra-Sim compatibility. |
+
+> Note: `--micro_batch` is not set (defaults to `--batch`). MoE parameters are not used in this configuration.
+
+
+### 2.2 ASTRA-Sim Analytical Simulation and Integration
+
+We run **ASTRA-Sim** with STG-generated traces to evaluate distributed training behavior.
+
+- **Simulator:** [ASTRA-Sim](https://github.com/astra-sim/astra-sim)
+- **Backend:** Analytical (congestion-aware)
+- **Cluster preset:** `hgx_h100_2gpu`
+- **Input:** STG-generated **Chakra ET** + **communicator**
+
+
+#### Setup ASTRA-Sim — Installation
+
+```bash
+# Clone Repository from Astra-sim
+git clone git@github.com:astra-sim/astra-sim.git  
+ASTRA_SIM=$(realpath ./astra-sim)  
+cd ${ASTRA_SIM}  
+git submodule update --init --recursive  
+```
+Use Docker
+```bash
+# Build Docker Image
+docker build -t astra-sim:latest -f Dockerfile .
+# Run Docker Container
+docker run -it --name astra-sim-latest  --shm-size=8g astra-sim:latest bash
+```
+#### Build ASTRA-sim
+```bash
+# Compile Program
+
+# Analytical Network Backend
+./build/astra_analytical/build.sh
+
+# Once built, the executable ${ASTRA_SIM_BIN} is located at:
+ASTRA_SIM_BIN=${ASTRA_SIM}/build/astra_analytical/build/bin/AstraSim_Analytical_Congestion_Aware
+```
+#### Run ASTRA-sim
+Run simulations by passing the required aruguments:
+
+```bash
+${ASTRA_SIM_BIN} \
+  --workload-configuration=${WORKLOAD_CONFIG} \
+  --system-configuration=${SYSTEM_CONFIG} \
+  --network-configuration=${NETWORK_CONFIG} \
+  --remote-memory-configuration=${REMOTE_MEMORY_CONFIG} \
+  --comm-group-configuration=${COMM_GROUP_CONFIG}
+```
+
+**Configs**
+- Workload: `symbolic_tensor_graph/generated/llama3_7b_dp2/workload`
+- System: `inputs/system/analytical/hgx_h100_2gpu.json`
+- Network: `inputs/network/hgx_h100_2gpu.yml`
+- Remote Memory: `examples/remote_memory/analytical/no_memory_expansion.json`
+- Communicator: `symbolic_tensor_graph/generated/llama3_7b_dp2/comm_group.json`
+
+**Run Command Example**
+```bash
+build/astra_analytical/build/bin/AstraSim_Analytical_Congestion_Aware \
+  --workload-configuration=/app/tools/symbolic_tensor_graph/generated/llama3_7b_dp2/workload \
+  --comm-group-configuration=/app/tools/symbolic_tensor_graph/generated/llama3_7b_dp2/comm_group.json \
+  --system-configuration=inputs/system/analytical/hgx_h100_2gpu.json \
+  --network-configuration=inputs/network/hgx_h100_2gpu.yml \
+  --remote-memory-configuration=examples/remote_memory/analytical/no_memory_expansion.json
+```
+
+
+
+## Benchmark Reference — MLPerf Power
+To guide evaluation, we align with the [**MLPerf Power**](https://ieeexplore.ieee.org/abstract/document/10946778) methodology.
+
+## Licenses
+
+- **ASTRA-Sim** — Released under the **BSD 3-Clause License**.  
+- **Symbolic Tensor Graph (STG)** — Released under the **MIT License**.
+
+Both projects are fully open-source and publicly available on GitHub.  
+This artifact leverages their official repositories without modifying any core functionality, ensuring reproducibility and alignment with upstream implementations.
+
+## References
+- [PCCL: Power-Aware Collective Communication](https://ieeexplore.ieee.org/document/10818209)  
+- [Unsloth](https://github.com/unslothai/unsloth)  
+- [ASTRA-Sim](https://github.com/astra-sim)  
+- [Symbolic Tensor Graph](https://github.com/astra-sim/symbolic_tensor_graph)
+- [MLPerf](https://ieeexplore.ieee.org/abstract/document/10946778)

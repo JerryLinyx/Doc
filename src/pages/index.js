@@ -159,9 +159,11 @@ const TechBadges = {
     lightSrc: 'https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white&style=flat-square',
     darkSrc:  'https://img.shields.io/badge/Arduino-232F3E?logo=arduino&logoColor=00979D&style=flat-square',
   },
-
-
-
+  deepseek: {
+    alt: 'DeepSeek',
+    lightSrc: 'https://img.shields.io/badge/DeepSeek-3B8AFF?style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/DeepSeek-232F3E?style=flat-square',
+  },
 
 
   // ===== Databases / Infra =====
@@ -360,6 +362,28 @@ const projects = [
     ],
   },
   {
+    image: 'index/pacc.png',
+    title: 'PACC: Power-Aware Collective Communication',
+    link: 'docs/PACC/',
+    metaLeft: (
+      <>
+        Supervisor: <a href="https://takhandipu.github.io/"> Tanvir Ahmed Khan</a>
+      </>
+    ),
+    date: 'Sep. 2025 - Present',
+    badges: [
+      TechBadges.cuda,
+      TechBadges.pytorch,
+      TechBadges.python,
+      TechBadges.cpp,
+    ],
+    bullets: [
+      <>Established a trace-driven simulation workflow enabling reproducible energy performance co-analysis for large-scale LLM systems.</>,
+      <>Implemented a multi-GPU profiling pipeline that collects host/device-level CPU & CUDA activities with synchronized NVML power logging.</>,
+      <>Integrated the workflow into ASTRA-Sim's analytical backend to support scalable energy-performance simulation across distributed configurations.</>,
+    ],
+  },
+  {
     image: 'index/pvz.png',
     title: 'FPGA-based Plants vs. Zombies: An SoC Game Design',
     link: '',
@@ -394,11 +418,13 @@ const projects = [
     date: 'Jan. 2025 - May. 2025',
     badges: [
       TechBadges.flask,
-      TechBadges.yolo,
-      TechBadges.mediapipe,
+      TechBadges.pytorch,
       TechBadges.sqlite,
       TechBadges.vue,
       TechBadges.js,
+      TechBadges.yolo,
+      TechBadges.mediapipe,
+      TechBadges.deepseek,
       TechBadges.python,
       TechBadges.esp32,
       TechBadges.arduino,
