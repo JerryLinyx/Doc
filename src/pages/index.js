@@ -6,15 +6,35 @@ import styles from './index.module.css';
 import {useColorMode} from '@docusaurus/theme-common';
 
 const contactLinks = [
-  {label: 'LinkedIn', href: 'https://www.linkedin.com/in/yuxuan0/'},
   {label: 'Github', href: 'https://github.com/JerryLinyx'},
+  {label: 'LinkedIn', href: 'https://www.linkedin.com/in/yuxuan0/'},
+  {label: 'Email', href: 'mailto:yl6061@columbia.edu'},
 ];
 
 const researchExperiences = [
+    {
+    image: 'index/isbi2026.png',
+    title: 'Bayesian PET Reconstruction with Learned Normalizing Flow Priors',
+    link: '',
+    metaLeft: (
+      <>
+        <a href="">Hengjia Ran</a>,&nbsp; 
+        <a href="">Yuxuan Lin</a>,&nbsp; 
+        <a href="https://scholar.google.com/citations?user=JbkbGvEAAAAJ">Huafeng Liu</a>,&nbsp;
+        <a href="https://scholar.google.com/citations?user=EA4ZKygAAAAJ">Bo Zhao</a>
+        <br />
+       Submitted to IEEE ISBI 2026
+      </>
+    ),
+    date: '',
+    bullets: [
+    
+    ],
+  },
   {
     image: 'index/PET.png',
     title: 'Flow-based Deep Generative Model for PET Image Reconstruction - Senior Thesis',
-    link: '',
+    link: 'docs/Flow/',
     metaLeft: (
       <>
         Adviser: <a href="https://zjui.intl.zju.edu.cn/en/team/teacherinfo/2736">Bo Zhao</a> (ZJU CIIP Group)
@@ -267,7 +287,7 @@ export default function Home() {
 
           <ExperienceSection
             title="Research Experiences"
-            description="My research explores generative models for medical imaging and 3D content creation."
+            description="My research explores generative models and medical imaging."
             items={researchExperiences}
           />
 
