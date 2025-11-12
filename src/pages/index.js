@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './index.module.css';
 import {useColorMode} from '@docusaurus/theme-common';
+import { timePanelSharedProps } from 'element-plus/es/components/time-picker/src/props/shared.mjs';
 
 const contactLinks = [
   {label: 'Github', href: 'https://github.com/JerryLinyx'},
@@ -42,14 +43,14 @@ const researchExperiences = [
     ),
     date: 'Dec. 2024 - Jun. 2025',
     bullets: [
+      <>Formulated PET (Positron Emission Tomography) reconstruction as a Bayesian inference problem.
+      </>,
+      <>Applied Normalizing Flows (<strong>RealNVP</strong>, <strong>Glow</strong>) to model the posterior distribution of tracer activity.</>,
       <>
-        Formulated PET (Positron Emission Tomography) reconstruction as a Bayesian inference problem, using conditional normalizing flows (<strong>RealNVP</strong>, <strong>Glow</strong>) to model the posterior distribution of tracer activity.
+        Implemented a Deep Probabilistic Imaging pipeline, enhancing reconstruction accuracy and providing crucial uncertainty estimates for clinical diagnosis.
       </>,
       <>
-        Implemented a Deep Probabilistic Imaging (DPI) pipeline that outputs both posterior mean reconstructions and uncertainty estimates.
-      </>,
-      <>
-        Scaled training with multi-GPU parallelization (3.7x speedup) while keeping image quality stable ({'<'}1% drop).
+        Scaled training with multi-GPU parallelization (3.7x speedup) while maintaining image quality.
       </>,
     ],
   },
@@ -65,9 +66,9 @@ const researchExperiences = [
     ),
     date: 'Jun. 2024 - Nov. 2024',
     bullets: [
-      <>Built a GenAI powered Blender plugin with Python, supporting 3D prototype management, segmentation, and Gaussian ↔ Mesh conversion.</>,
-      <>Enabled text-to-3D model generation using Transformer-based Gaussian Splatting and mesh rendering pipelines.</>,
-      <>Deployed a Flask-based backend to track user interactions and support 3D generation services.</>,
+      <>Created a Generative AI-powered Blender plugin in Python to automate the 3D design workflow, supporting 3D prototype management, segmentation, and Gaussian ↔ Mesh conversion.</>,
+      <>Engineered text-to-3D model generation using Transformer/Diffusion-based Gaussian Splatting and mesh rendering pipelines, cutting average modeling time for artists by 50%.</>,
+      <>Deployed a Flask-based backend to track user interactions and deliver 3D generation services.</>,
     ],
   },
 ];
@@ -80,8 +81,8 @@ const professionalExperiences = [
     metaLeft: 'IoT Product Group 5, Ezviz',
     date: 'Jul. 2024 - Sep. 2024',
     bullets: [
-      <>Developed control system modules for commercial cleaning robots on <strong>FreeRTOS</strong> and <strong>Linux OS</strong>.</>,
-      <>Designed and implemented sensor logic for GD32 microcontroller using the Keil environment, ensuring precise control and real-time operation.</>,
+      <>Developed and integrated key system modules for commercial cleaning robots on <strong>Linux</strong>, enabling autonomous navigation and improving cleaning path efficiency.</>,
+      <>Built sensor logic on <strong>FreeRTOS</strong> for microcontroller, ensuring precise control and real-time operation.</>,
     ],
   },
   {
@@ -95,17 +96,64 @@ const professionalExperiences = [
     ),
     date: 'Sep. 2024 - Jan. 2025',
     bullets: [
-      <>Led bi-weekly discussion sessions to strengthen students&apos; grasp of core discrete mathematics concepts.</>,
-      <>Contributed to the design of course materials, including homework and exam samples, ensuring alignment with learning objectives.</>,
-      <>Graded assignments and exams with accuracy and provided constructive feedback; supported students through office hours.</>,
+      <>Hold weekly office hours and discussion sessions to strengthen students&apos; grasp of core discrete mathematics concepts.</>,
+      <>Designed and graded assignments and exams, ensuring alignment with learning objectives.</>,
     ],
   },
 ];
 
 const projects = [
   {
-    image: 'index/Lenet.png',
-    title: 'GPU Convolution Kernel Optimizations',
+    image: 'index/dashboard.png',
+    title: 'FinGOAT: Financial Graph-Orchestrated Agentic Trading',
+    link: 'https://github.com/JerryLinyx/FinGOAT',
+    date: 'Nov. 2025 - Present',
+    metaLeft: (
+      <>
+        Supervisor: <a href="https://www.linkedin.com/in/parijatdube/">Parijat Dube</a>,&nbsp;
+        <a href='https://www.linkedin.com/in/chenw615/'>Chen Wang</a>
+      </>
+    ),
+    bullets: [
+      <>Implemented a Go backend <strong>(Gin + GORM + Viper + JWT)</strong> and <strong>TypeScript/React (Vite)</strong> frontend.</>,
+      <>Containerized core services with <strong>Docker</strong>, enabling reproducible deployment of <strong>PostgreSQL</strong>, <strong>Redis</strong>, and backend APIs.</>,
+    ],
+  },
+  {
+    image: 'index/pvz.png',
+    title: 'FPGA-based Plants vs. Zombies: An SoC Game Design',
+    link: '',
+    metaLeft: (
+      <>  
+        Supervisor: <a href="https://zjui.intl.zju.edu.cn/en/node/768">Chushan Li</a>
+      </>
+    ),
+    date: 'Apr. 2025 - May. 2025',
+    bullets: [
+      <>In a team of 2, developed an <strong>FPGA</strong>-based Plants vs. Zombies game as a System-on-Chip (SoC), integrating <strong>SystemVerilog</strong> hardware modules with a Nios II soft-core processor.</>,
+      <>Implemented VGA display, sprite rendering, collision detection, and USB keyboard input modules based on FSM control and ROM buffering, achieving responsive real-time interaction and smooth 60 FPS gameplay on a 640x480 monitor.</>,
+      <>Integrated hardware-software co-design in Platform Designer, connecting VGA, USB, SDRAM, and logic modules via the Avalon bus and verifying timing through ModelSim simulation.</>,
+    ],
+  },
+  {
+    image: 'index/sfc.jpeg',
+    title: 'Smart Fitness Coach: Full-stack CV-powered AIoT App',
+    link: '',
+    metaLeft: (
+      <>  
+        Supervisor: <a href="https://zjui.intl.zju.edu.cn/en/node/1652">Timothy Haw-Yu Lee</a>
+      </>
+    ),
+    date: 'Jan. 2025 - May. 2025',
+    bullets: [
+      <>Led a team of 4 to engineer an ESP32-based hardware-software co-designed IoT system, enabling real-time video streaming and asynchronous control of lighting and motor modules.</>,
+      <>Implemented a Flask backend with SQLite for local data storage, and deployed YOLO/MediaPipe inference service for real-time pose estimation and repetition counting.</>,
+      <>Built a Vue3 (UniApp) frontend to visualize workout sessions and user history, and integrated DeepSeek API to provide personalized fitness insights.</>,
+    ],
+  },
+  {
+    image: 'index/lenet.png',
+    title: 'CUDA-LeNet: GPU-Accelerated Convolution Kernel Optimization',
     link: 'https://github.com/JerryLinyx/LeNet-CUDA-ECE408/tree/main/Project',
     metaLeft: (
       <>
@@ -114,14 +162,13 @@ const projects = [
     ),
     date: 'Sep. 2024 - Dec. 2024',
     bullets: [
-      <>Implemented and optimized the forward-pass of a convolutional layer of the modified LeNet-5 using <strong>CUDA</strong>.</>,
-      <>Used Streams to overlap computation with data transfer.</>,
-      <>Used Tensor Cores and shared memory tiling to speed up matrix multiplication with an advanced GEMM kernel.</>,
-      <>Further optimizations included loop unrolling, constant memory, and mixed-precision (FP16) arithmetic.</>,
+      <>Optimized the forward-pass of a LeNet-5 convolutional layer using <strong>CUDA</strong> with an advanced GEMM kernel.</>,
+      <>Applied techniques including streams, Tensor Cores, memory tiling, FP16 arithmetic, and loop unrolling to maximize throughput.</>,
+      <>Achieved 27,909x speedup over the CPU implementation and 36% over the parallel baseline.</>,
     ],
   },
   {
-    image: 'index/fish.png',
+    image: 'index/os.png',
     title: 'LOS - A Light Linux-Like Operating System',
     link: 'https://github.com/JerryLinyx/Linux-OS-Kernel-ECE391/tree/main/mp3',
     metaLeft: (
@@ -132,10 +179,9 @@ const projects = [
     ),
     date: 'Mar. 2024 - May 2024',
     bullets: [
-      <>Developed a Linux-like operating system kernel from scratch using <strong>C</strong> and <strong>x86 assembly</strong>.</>,
-      <>Implemented interrupts, system calls, and exception handling managed by the 8259 PIC, including kernel/user state switching with TSS.</>,
-      <>Completed the virtual memory system, file system, and terminal support; integrated devices including keyboard, RTC, and PIT.</>,
-      <>Delivered multi-process scheduling with per-terminal buffers and process control blocks; led a four-person team using Git and GDB.</>,
+      <>Led a team of 4 to construct a Linux-like operating system kernel from scratch using <strong>C</strong> and <strong>x86 assembly</strong>.</>,
+      <>Developed OS modules and services including virtual memory, file system, terminal display, interrupt / system calls / exception handling, and device drivers for keyboards, RTC, and PIT.</>,
+      <>Completed kernel and user modes switching, multi-terminal switching, and multi-process scheduling.</>,
     ],
   },
   {
@@ -149,9 +195,8 @@ const projects = [
     ),
     date: 'Mar. 2024 - Apr. 2024',
     bullets: [
-      <>Developed an adventure puzzle-solving game demo in a team of five, themed after Infinity Blade using <strong>Unreal Engine</strong> Blueprints.</>,
-      <>Implemented core gameplay mechanics including health system, collectible items, and multiple enemy archetypes.</>,
-      <>Built four integrated levels—Lava Parkour, Laser Puzzle, Riddle Maze, and Traffic Jam—to deliver varied gameplay.</>,
+      <>In a team of 5, developed an adventure puzzle-solving game demo inspired by Infinity Blade, using <strong>Unreal Engine 5</strong> and Blueprints.</>,
+      <>Implemented core gameplay mechanics including health and attack systems, collectible items, and AI enemies for 4 integrated levels (Lava Parkour, Laser Puzzle, Riddle Maze, and Traffic Jam), delivering varied gameplay.</>,
     ],
   },
 ];
@@ -306,7 +351,6 @@ export default function Home() {
             )}
             items={projects}
           />
-
           <section className={styles.section}>
             <header className={styles.sectionHeader}>
               <h2 className={styles.sectionTitle}>Relevant courses:</h2>
