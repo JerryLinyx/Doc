@@ -12,6 +12,211 @@ const contactLinks = [
   {label: 'Email', href: 'mailto:yl6061@columbia.edu'},
 ];
 
+const TechBadges = {
+  // ===== Languages =====
+  c: {
+    alt: 'C',
+    lightSrc: 'https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=black&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/C-232F3E?logo=c&logoColor=A8B9CC&style=flat-square',
+  },
+  cpp: {
+    alt: 'C++',
+    lightSrc: 'https://img.shields.io/badge/C++-00599C?logo=c%2B%2B&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/C++-232F3E?logo=c%2B%2B&logoColor=00599C&style=flat-square',
+  },
+  python: {
+    alt: 'Python',
+    lightSrc: 'https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Python-232F3E?logo=python&logoColor=FFD343&style=flat-square',
+  },
+  go: {
+    alt: 'Go',
+    lightSrc: 'https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Go-232F3E?logo=go&logoColor=00ADD8&style=flat-square',
+  },
+  typescript: {
+    alt: 'TypeScript',
+    lightSrc: 'https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/TypeScript-232F3E?logo=typescript&logoColor=3178C6&style=flat-square',
+  },
+  js: {
+    alt: 'JavaScript',
+    lightSrc: 'https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/JavaScript-232F3E?logo=javascript&logoColor=F7DF1E&style=flat-square',
+  },
+  verilog: {
+    alt: 'SystemVerilog',
+    lightSrc: 'https://img.shields.io/badge/SystemVerilog-007ACC?logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/SystemVerilog-232F3E?logoColor=white&style=flat-square',
+  },
+  assembly: {
+    alt: 'x86 Assembly',
+    lightSrc: 'https://img.shields.io/badge/x86_Assembly-0071C5?logo=intel&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/x86_Assembly-232F3E?logo=intel&logoColor=0071C5&style=flat-square',
+  },
+  matlab: {
+    alt: 'MATLAB',
+    lightSrc: 'https://img.shields.io/badge/MATLAB-0076A8?logo=matlab&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/MATLAB-232F3E?logo=matlab&logoColor=0076A8&style=flat-square',
+  },
+
+
+
+
+  // ===== Frameworks & Libraries =====
+  react: {
+    alt: 'React',
+    lightSrc: 'https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/React-232F3E?logo=react&logoColor=61DAFB&style=flat-square',
+  },
+  vue: {
+    alt: 'Vue',
+    lightSrc: 'https://img.shields.io/badge/Vue.js-4FC08D?logo=vue.js&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Vue.js-232F3E?logo=vue.js&logoColor=4FC08D&style=flat-square',
+  },
+  vite: {
+    alt: 'Vite',
+    lightSrc: 'https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Vite-232F3E?logo=vite&logoColor=646CFF&style=flat-square',
+  },
+  flask: {
+    alt: 'Flask',
+    lightSrc: 'https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Flask-232F3E?logo=flask&logoColor=white&style=flat-square',
+  },
+  gin: {
+    alt: 'Gin',
+    lightSrc: 'https://img.shields.io/badge/Gin-00ADD8?logo=go&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Gin-232F3E?logo=go&logoColor=00ADD8&style=flat-square',
+  },
+  gorm: {
+    alt: 'GORM',
+    lightSrc: 'https://img.shields.io/badge/GORM-3E7AAB?logo=go&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/GORM-232F3E?logo=go&logoColor=3E7AAB&style=flat-square',
+  },
+  pytorch: {
+    alt: 'PyTorch',
+    lightSrc: 'https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/PyTorch-232F3E?logo=pytorch&logoColor=EE4C2C&style=flat-square',
+  },
+  mediapipe: {
+    alt: 'MediaPipe',
+    lightSrc: 'https://img.shields.io/badge/MediaPipe-4285F4?logo=google&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/MediaPipe-232F3E?logo=google&logoColor=4285F4&style=flat-square',
+  },
+  yolo: {
+    alt: 'YOLO (Ultralytics)',
+    lightSrc: 'https://img.shields.io/badge/YOLO-3B8AFF?logo=ultralytics&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/YOLO-232F3E?logo=ultralytics&logoColor=3B8AFF&style=flat-square',
+  },
+  cuda: {
+    alt: 'CUDA',
+    lightSrc: 'https://img.shields.io/badge/CUDA-76B900?logo=nvidia&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/CUDA-232F3E?logo=nvidia&logoColor=76B900&style=flat-square',
+  },
+  unreal: {
+    alt: 'Unreal Engine',
+    lightSrc: 'https://img.shields.io/badge/Unreal_Engine-0E1128?logo=unrealengine&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Unreal_Engine-232F3E?logo=unrealengine&logoColor=white&style=flat-square',
+  },
+  blender: {
+    alt: 'Blender',
+    lightSrc: 'https://img.shields.io/badge/Blender-F5792A?logo=blender&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Blender-232F3E?logo=blender&logoColor=F5792A&style=flat-square',
+  },
+  overleaf: {
+    alt: 'Overleaf',
+    lightSrc: 'https://img.shields.io/badge/Overleaf-3A9B5F?logo=overleaf&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Overleaf-232F3E?logo=overleaf&logoColor=3A9B5F&style=flat-square',
+  },
+  keil: {
+    alt: 'Keil (Arm)',
+    lightSrc: 'https://img.shields.io/badge/Keil-0078D7?logo=arm&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Keil-232F3E?logo=arm&logoColor=0078D7&style=flat-square',
+  },
+  quartus: {
+    alt: 'Intel Quartus',
+    lightSrc: 'https://img.shields.io/badge/Quartus-0071C5?logo=intel&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Quartus-232F3E?logo=intel&logoColor=0071C5&style=flat-square',
+  },
+  eclipse: {
+    alt: 'Eclipse IDE',
+    lightSrc: 'https://img.shields.io/badge/Eclipse_IDE-2C2255?logo=eclipseide&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Eclipse_IDE-232F3E?logo=eclipseide&logoColor=2C2255&style=flat-square',
+  },
+  git: {
+  alt: 'Git',
+  lightSrc: 'https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white&style=flat-square',
+  darkSrc:  'https://img.shields.io/badge/Git-232F3E?logo=git&logoColor=F05032&style=flat-square',
+  },
+  svn: {
+    alt: 'Subversion (SVN)',
+    lightSrc: 'https://img.shields.io/badge/SVN-EB8C00?logo=subversion&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/SVN-232F3E?logo=subversion&logoColor=EB8C00&style=flat-square',
+  },
+  arduino: {
+    alt: 'Arduino',
+    lightSrc: 'https://img.shields.io/badge/Arduino-00979D?logo=arduino&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Arduino-232F3E?logo=arduino&logoColor=00979D&style=flat-square',
+  },
+
+
+
+
+
+  // ===== Databases / Infra =====
+  postgres: {
+    alt: 'PostgreSQL',
+    lightSrc: 'https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/PostgreSQL-232F3E?logo=postgresql&logoColor=336791&style=flat-square',
+  },
+  redis: {
+    alt: 'Redis',
+    lightSrc: 'https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Redis-232F3E?logo=redis&logoColor=DC382D&style=flat-square',
+  },
+  sqlite: {
+    alt: 'SQLite',
+    lightSrc: 'https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/SQLite-232F3E?logo=sqlite&logoColor=003B57&style=flat-square',
+  },
+  docker: {
+    alt: 'Docker',
+    lightSrc: 'https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Docker-232F3E?logo=docker&logoColor=2496ED&style=flat-square',
+  },
+
+  // ===== Embedded / Hardware =====
+  esp32: {
+    alt: 'ESP32',
+    lightSrc: 'https://img.shields.io/badge/ESP32-000000?logo=espressif&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/ESP32-232F3E?logo=espressif&logoColor=white&style=flat-square',
+  },
+  gd32: {
+    alt: 'GD32 (GigaDevice)',
+    lightSrc: 'https://img.shields.io/badge/GD32-0093DD?logo=gigadevice&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/GD32-232F3E?logo=gigadevice&logoColor=0093DD&style=flat-square',
+  },
+  freertos: {
+    alt: 'FreeRTOS (Amazon)',
+    lightSrc: 'https://img.shields.io/badge/FreeRTOS-FF9900?logo=amazonaws&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/FreeRTOS-232F3E?logo=amazonaws&logoColor=FF9900&style=flat-square',
+  },
+  linux: {
+    alt: 'Linux',
+    lightSrc: 'https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/Linux-232F3E?logo=linux&logoColor=FCC624&style=flat-square',
+  },
+  fpga: {
+    alt: 'FPGA (Texas Instruments)',
+    lightSrc: 'https://img.shields.io/badge/FPGA-CC0000?logo=texasinstruments&logoColor=white&style=flat-square',
+    darkSrc:  'https://img.shields.io/badge/FPGA-232F3E?logo=texasinstruments&logoColor=CC0000&style=flat-square',
+  },
+
+};
+
+
+
 const researchExperiences = [
     {
     image: 'index/isbi2026.png',
@@ -42,6 +247,13 @@ const researchExperiences = [
       </>
     ),
     date: 'Dec. 2024 - Jun. 2025',
+    badges: [
+      TechBadges.pytorch,
+      TechBadges.cuda,
+      TechBadges.python,
+      TechBadges.matlab,
+    ],
+
     bullets: [
       <>Formulated PET (Positron Emission Tomography) reconstruction as a Bayesian inference problem.
       </>,
@@ -65,6 +277,12 @@ const researchExperiences = [
       </>
     ),
     date: 'Jun. 2024 - Nov. 2024',
+    badges: [
+      TechBadges.blender,
+      TechBadges.flask,
+      TechBadges.pytorch,
+      TechBadges.python,
+    ],
     bullets: [
       <>Created a Generative AI-powered Blender plugin in Python to automate the 3D design workflow, supporting 3D prototype management, segmentation, and Gaussian ↔ Mesh conversion.</>,
       <>Engineered text-to-3D model generation using Transformer/Diffusion-based Gaussian Splatting and mesh rendering pipelines, cutting average modeling time for artists by 50%.</>,
@@ -80,6 +298,15 @@ const professionalExperiences = [
     link: '',
     metaLeft: 'IoT Product Group 5, Ezviz',
     date: 'Jul. 2024 - Sep. 2024',
+    badges: [
+      TechBadges.linux,
+      TechBadges.freertos,
+      TechBadges.c,
+      TechBadges.gd32,
+      TechBadges.keil,
+      TechBadges.svn,
+    ],
+
     bullets: [
       <>Developed and integrated key system modules for commercial cleaning robots on <strong>Linux</strong>, enabling autonomous navigation and improving cleaning path efficiency.</>,
       <>Built sensor logic on <strong>FreeRTOS</strong> for microcontroller, ensuring precise control and real-time operation.</>,
@@ -95,6 +322,9 @@ const professionalExperiences = [
       </>
     ),
     date: 'Sep. 2024 - Jan. 2025',
+    badges: [
+      TechBadges.overleaf,
+    ],
     bullets: [
       <>Hold weekly office hours and discussion sessions to strengthen students&apos; grasp of core discrete mathematics concepts.</>,
       <>Designed and graded assignments and exams, ensuring alignment with learning objectives.</>,
@@ -114,6 +344,16 @@ const projects = [
         <a href='https://www.linkedin.com/in/chenw615/'>Chen Wang</a>
       </>
     ),
+    badges: [
+      TechBadges.go,
+      TechBadges.gin,
+      TechBadges.gorm,
+      TechBadges.react,
+      TechBadges.typescript,
+      TechBadges.postgres,
+      TechBadges.redis,
+      TechBadges.docker,
+    ],
     bullets: [
       <>Implemented a Go backend <strong>(Gin + GORM + Viper + JWT)</strong> and <strong>TypeScript/React (Vite)</strong> frontend.</>,
       <>Containerized core services with <strong>Docker</strong>, enabling reproducible deployment of <strong>PostgreSQL</strong>, <strong>Redis</strong>, and backend APIs.</>,
@@ -129,6 +369,13 @@ const projects = [
       </>
     ),
     date: 'Apr. 2025 - May. 2025',
+    badges: [
+      TechBadges.verilog,
+      TechBadges.fpga,
+      TechBadges.quartus,
+      TechBadges.c,
+      TechBadges.eclipse,
+    ],
     bullets: [
       <>In a team of 2, developed an <strong>FPGA</strong>-based Plants vs. Zombies game as a System-on-Chip (SoC), integrating <strong>SystemVerilog</strong> hardware modules with a Nios II soft-core processor.</>,
       <>Implemented VGA display, sprite rendering, collision detection, and USB keyboard input modules based on FSM control and ROM buffering, achieving responsive real-time interaction and smooth 60 FPS gameplay on a 640x480 monitor.</>,
@@ -145,6 +392,17 @@ const projects = [
       </>
     ),
     date: 'Jan. 2025 - May. 2025',
+    badges: [
+      TechBadges.flask,
+      TechBadges.yolo,
+      TechBadges.mediapipe,
+      TechBadges.sqlite,
+      TechBadges.vue,
+      TechBadges.js,
+      TechBadges.python,
+      TechBadges.esp32,
+      TechBadges.arduino,
+    ],
     bullets: [
       <>Led a team of 4 to engineer an ESP32-based hardware-software co-designed IoT system, enabling real-time video streaming and asynchronous control of lighting and motor modules.</>,
       <>Implemented a Flask backend with SQLite for local data storage, and deployed YOLO/MediaPipe inference service for real-time pose estimation and repetition counting.</>,
@@ -161,6 +419,12 @@ const projects = [
       </>
     ),
     date: 'Sep. 2024 - Dec. 2024',
+    badges: [
+      TechBadges.cuda,
+      TechBadges.cpp,
+      TechBadges.pytorch,
+      TechBadges.python,
+    ],
     bullets: [
       <>Optimized the forward-pass of a LeNet-5 convolutional layer using <strong>CUDA</strong> with an advanced GEMM kernel.</>,
       <>Applied techniques including streams, Tensor Cores, memory tiling, FP16 arithmetic, and loop unrolling to maximize throughput.</>,
@@ -178,6 +442,12 @@ const projects = [
       </>
     ),
     date: 'Mar. 2024 - May 2024',
+    badges: [
+      TechBadges.linux,
+      TechBadges.c,
+      TechBadges.assembly,
+      TechBadges.git,
+    ],
     bullets: [
       <>Led a team of 4 to construct a Linux-like operating system kernel from scratch using <strong>C</strong> and <strong>x86 assembly</strong>.</>,
       <>Developed OS modules and services including virtual memory, file system, terminal display, interrupt / system calls / exception handling, and device drivers for keyboards, RTC, and PIT.</>,
@@ -194,6 +464,10 @@ const projects = [
       </>
     ),
     date: 'Mar. 2024 - Apr. 2024',
+    badges: [
+      TechBadges.unreal,
+      TechBadges.cpp,
+    ],
     bullets: [
       <>In a team of 5, developed an adventure puzzle-solving game demo inspired by Infinity Blade, using <strong>Unreal Engine 5</strong> and Blueprints.</>,
       <>Implemented core gameplay mechanics including health and attack systems, collectible items, and AI enemies for 4 integrated levels (Lava Parkour, Laser Puzzle, Riddle Maze, and Traffic Jam), delivering varied gameplay.</>,
@@ -233,6 +507,26 @@ function ExperienceCard({item}) {
           </a>
         ) : (
           <span className={styles.cardTitle}>{item.title}</span>
+        )}
+        {item.badges && (
+          <div className={styles.badgeRow}>
+            {item.badges.map((badge, idx) => {
+              const { colorMode } = useColorMode();
+              const src = colorMode === 'dark' 
+                ? badge.darkSrc || badge.src 
+                : badge.lightSrc || badge.src;
+
+              return (
+                <img
+                  key={idx}
+                  src={src}
+                  alt={badge.alt}
+                  className={styles.badgeIcon}
+                  loading="lazy"
+                />
+              );
+            })}
+          </div>
         )}
         <div className={styles.metaRow}>
           <span className={styles.metaLeft}>{item.metaLeft}</span>
