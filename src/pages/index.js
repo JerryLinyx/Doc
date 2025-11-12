@@ -627,9 +627,9 @@ export default function Home() {
               </p>
               <p className={styles.heroSummary}>
                 Hi! I am currently pursuing a M.S. in Computer Engineering
-                at <b>Columbia University</b>, expecting to graduate in December 2026. 
+                at <b>Columbia University</b>, expecting to graduate in <b>December 2026</b>. 
                 <br />
-                Prior to this, I earned a B.S. in Computer Engineering from <b>University of Illinois Urbana-Champaign</b> and a B.Eng. in Electronic & Computer Engineering from <b>Zhejiang University</b> at the same time.
+                Prior to this, I earned a B.S. in Computer Engineering from <b>University of Illinois Urbana-Champaign</b> and a B.Eng. in Electronic & Computer Engineering from <b>Zhejiang University</b> through ZJU-UIUC dual-degree program.
               </p>
               <p className={styles.heroLinks}>
                 {contactLinks.map((link, index) => (
