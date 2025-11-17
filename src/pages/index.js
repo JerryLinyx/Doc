@@ -227,11 +227,11 @@ const researchExperiences = [
     metaLeft: (
       <>
         <a href="">Hengjia Ran</a>,&nbsp; 
-        <a href="">Yuxuan Lin</a>,&nbsp; 
+        <a href="">Yuxuan Lin</a>,&nbsp;
         <a href="https://scholar.google.com/citations?user=JbkbGvEAAAAJ">Huafeng Liu</a>,&nbsp;
         <a href="https://scholar.google.com/citations?user=EA4ZKygAAAAJ">Bo Zhao</a>
         <br />
-       Submitted to IEEE ISBI 2026
+       Submitted to IEEE International Symposium on Biomedical Imaging (ISBI) 2026
       </>
     ),
     date: '',
@@ -241,11 +241,11 @@ const researchExperiences = [
   },
   {
     image: 'index/PET.png',
-    title: 'Flow-based Deep Generative Model for PET Image Reconstruction - Senior Thesis',
+    title: 'Flow-based Deep Generative Model for PET Image Reconstruction',
     link: 'docs/Flow/',
     metaLeft: (
       <>
-        Adviser: <a href="https://zjui.intl.zju.edu.cn/en/team/teacherinfo/2736">Bo Zhao</a> (ZJU CIIP Group)
+        Senior Thesis | Adviser: <a href="https://zjui.intl.zju.edu.cn/en/team/teacherinfo/2736">Bo Zhao</a> (ZJU CIIP Group)
       </>
     ),
     date: 'Dec. 2024 - Jun. 2025',
@@ -274,7 +274,7 @@ const researchExperiences = [
     link: '',
     metaLeft: (
       <>
-        Adviser: <a href="https://person.zju.edu.cn/chenlq">Liuqing Chen</a>
+        Summer Research | Adviser: <a href="https://person.zju.edu.cn/chenlq">Liuqing Chen</a>
         <a href="https://icilab.cn/"> (ZJU ICI Lab)</a>
       </>
     ),
@@ -298,7 +298,7 @@ const professionalExperiences = [
     image: 'index/hikvision.jpeg',
     title: 'Software Development Intern',
     link: '',
-    metaLeft: 'IoT Product Group 5, Ezviz',
+    metaLeft: 'IoT Product Group 5, Ezviz, Hikvision',
     date: 'Jul. 2024 - Sep. 2024',
     badges: [
       TechBadges.linux,
