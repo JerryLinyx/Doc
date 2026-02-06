@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_web=self.webpackChunkmy_web||[]).push([[1401],{64:e=>{e.exports=JSON.parse('{"categoryGeneratedIndex":{"title":"AI Infrastructure","slug":"/category/ai-infrastructure","permalink":"/Doc/docs/category/ai-infrastructure","sidebar":"tutorialSidebar","navigation":{"next":{"title":"PACC","permalink":"/Doc/docs/AI Infra/PACC"}}}}')}}]);
