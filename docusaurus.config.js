@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
@@ -121,10 +121,10 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Base',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/plog', label: 'Plog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/plog', label: 'Plog', position: 'left' },
 
           {
             href: 'https://github.com/JerryLinyx',
@@ -181,7 +181,7 @@ const config = {
                 href: 'https://JerryLinyx.github.io/CV',
               },
               {
-                label: 'Blog 1.0', 
+                label: 'Blog 1.0',
                 href: 'https://JerryLinyx.github.io'
               },
             ],
